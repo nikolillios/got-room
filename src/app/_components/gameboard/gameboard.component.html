@@ -1,7 +1,10 @@
 <table class='table'>
   <tr class='row-{{row}}' *ngFor='let row of rows()'>
-    <td *ngFor='let column of columns()' (click)='registerClick(row, column)' (mouseover)='mouseOver(row, column)'>
+    <td *ngFor='let column of columns()' id='td-{{row}}-{{column}}' (mouseup)='registerClick(row, column)'
+      (mousedown)='registerClick(row, column)' (click)='registerClick(row, column)'
+      (mouseover)='mouseOver(row, column)'>
       <span id='cell-{{row}}-{{column}}' class='marker' [style.backgroundColor]="state.tiles[row][column].color"></span>
     </td>
   </tr>
 </table>
+<p>{{selectionDimensions.toString()}}</p>

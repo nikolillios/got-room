@@ -12,7 +12,7 @@ export class SpinnerComponent implements OnInit {
   offset: number;
   colors: string[] = ['red', 'lightblue', 'yellow', 'purple', 'lightgreen']; //<<< Choose colors for spinner
   minSpin: number = 1080;
-  maxSpin: number = 7200;
+  maxSpin: number = 3600;
   buttonActive: boolean = true;
   @Output() public numberChosen = new EventEmitter();
   @Output() buttonEnabled = new EventEmitter<boolean>();

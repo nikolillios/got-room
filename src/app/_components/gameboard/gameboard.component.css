@@ -22,6 +22,11 @@ td:hover {
   border-style: double;
 }
 
+.hover {
+  opacity: 50%;
+  background:black;
+}
+
 span {
   font-weight: bold;
   background: none;

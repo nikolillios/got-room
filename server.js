@@ -122,6 +122,7 @@ function setListeners(socket) {
       rolls.push(data);
       if (isGameOver(rolls)) {
         game.emit('message', 'game over');
+        state.players[state.players.indexOf(player) - 1 % state.players.length].score += 1;
         state.gameStarted = false;
       }
     } else {
@@ -146,7 +147,7 @@ function setListeners(socket) {
 
 function resetPlayers() {
   for (let player of state.players) {
-    player.turns = [{ rolls: [], selection: { coord: [] } }];
+    player.turns = [{ rolls: [], selection: { coords: [] } }];
     player.isCurrPlayer = false;
   }
 }
