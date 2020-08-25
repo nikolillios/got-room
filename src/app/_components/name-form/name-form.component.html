@@ -1,0 +1,5 @@
+<form [formGroup]='joinForm' (ngSubmit)='join(joinForm.value)'>
+  <label for='name'>Name</label>
+  <input type='text' formControlName='name'>
+  <button type='submit'>join</button>
+</form>

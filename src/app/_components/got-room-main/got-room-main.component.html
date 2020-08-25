@@ -1,0 +1,19 @@
+<div *ngIf='!joined;else alt'>
+  <form [formGroup]='joinForm' (ngSubmit)='join(joinForm.value)'>
+    <label for='name'>Name</label>
+    <input type='text' formControlName='name'>
+    <button type='submit'>join</button>
+  </form>
+</div>
+<ng-template #alt>
+  <div>
+    <gameboard [(state)]="state" [(socketId)]='socket.id' (selected)="registerSelection($event)"></gameboard>
+
+    <button [disabled]="state.gameStarted" (click)="startGame()">Start Game</button>
+    <button [disabled]="state.gameStarted" (click)="playAgain()">Play Again</button>
+    <input type='text' #die>
+    <button (click)='submit()'>submit</button>
+    <score-card [(state)]='state'></score-card>
+    <spinner (numberChosen)='registerSpin($event)'></spinner>
+  </div>
+</ng-template>

@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="wheel-full" id="wheel">
+    <span *ngFor='let number of nums; index as i' id='{{i}}'><b>{{number}}</b></span>
+  </div>
+
+  <div class="ticker"></div>
+
+  <button class="spin-button" id="button" (click)="spinWheel()">
+    <img *ngIf='buttonActive' class='spin-icon' src='../assets/images/spin-icon.png'>
+    <img *ngIf='!buttonActive' class='spin-icon' src='../assets/images/spin-icon-disabled.png'>
+  </button>
+</div>
